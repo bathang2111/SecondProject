@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>day 2</title>
+    <link rel="stylesheet" type="text/css" href="./day2.css">
+</head>
+
+<body>
+    <div class="clock">
+        <div class="face">
+            <div class="kim gio"></div>
+            <div class="kim phut"></div>
+            <div class="kim giay"></div>
+        </div>
+    </div>
+    <script>
+    const a = document.querySelector('.giay');
+    const b = document.querySelector('.phut');
+    const c = document.querySelector('.gio');
+
+    function setdate() {
+        const now = new Date();
+
+        const seconds = now.getSeconds();
+        const RotateSeconds = (seconds / 60) * 360 + 90;
+        a.style.transform = `rotate(${RotateSeconds}deg)`;
+        a.style.background = ''
+
+        const minutes = now.getMinutes();
+        const RotateMinutes = (minutes / 60) * 360 + 90;
+        b.style.transform = `rotate(${RotateMinutes}deg)`;
+
+        const hours = now.getHours();
+        const RotateHours = hours;
+        c.style.transform = `rotate(${RotateHours}deg)`;
+    }
+    setInterval(setdate, 1000);
+    </script>
+</body>
+
+</html>
